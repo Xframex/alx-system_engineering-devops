@@ -5,7 +5,7 @@ if ARGV.length != 1
   exit(1)
 end
 
-pattern = /hbt*n/
+pattern = /hbthbt{2,5}n/
 input_string = ARGV[0]
 matches = input_string.scan(pattern)
 puts matches.join
