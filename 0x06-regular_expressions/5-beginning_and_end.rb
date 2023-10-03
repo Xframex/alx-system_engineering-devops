@@ -5,7 +5,7 @@ if ARGV.length != 1
   exit(1)
 end
 
-pattern = /h[a-z]n/
+pattern = /h[a-z-0-9]n/
 input_string = ARGV[0]
 matches = input_string.scan(pattern)
 puts matches.join
