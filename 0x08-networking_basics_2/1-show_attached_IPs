@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Get a list of active network interfaces
+interfaces=$(ifconfig -a | grep -oP '^[^\s:]+' | grep -v 'lo')
+
+# Loop through each interface and extract its IPv4 address
+for iface in $interfaces; do
+  ipv4_address=$(ifconfig $iface | grep -oP 'inet \K[\d.]+')
+  
+  # Check if an IPv4 address was found for the interface
+  if [ -n "$ipv4_address" ]; then
+    echo "$ipv4_address"
+  fi
+done
