@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script to give user run as a privileged user
+
+sudo -H -u "$1" bash -c 'whoami'
